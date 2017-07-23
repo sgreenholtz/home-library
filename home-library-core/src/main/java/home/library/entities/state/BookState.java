@@ -9,6 +9,7 @@ public interface BookState {
     }
     void process();
     BookState getNextState();
+    String describeState();
 
 
 }

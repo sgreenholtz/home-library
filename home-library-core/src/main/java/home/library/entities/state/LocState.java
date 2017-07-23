@@ -27,6 +27,11 @@ public class LocState implements BookState{
         return UserApprovalState.getInstance();
     }
 
+    @Override
+    public String describeState() {
+        return "Library of Congress State";
+    }
+
     private static void initialize() {
         if (state == null) {
             state = new LocState();

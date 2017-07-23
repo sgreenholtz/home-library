@@ -23,6 +23,11 @@ public class ErrorState implements BookState{
         return null;
     }
 
+    @Override
+    public String describeState() {
+        return "Error State";
+    }
+
     private static void initialize() {
         if (state == null) {
             state = new ErrorState();

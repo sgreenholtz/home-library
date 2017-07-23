@@ -27,6 +27,11 @@ public class UserApprovalState implements BookState {
         return null;
     }
 
+    @Override
+    public String describeState() {
+        return "User Approval State";
+    }
+
     private static void initialize() {
         if (state == null) {
             state = new UserApprovalState();

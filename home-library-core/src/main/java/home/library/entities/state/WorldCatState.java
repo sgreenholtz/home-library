@@ -27,6 +27,11 @@ public class WorldCatState implements BookState {
         return LocState.getInstance();
     }
 
+    @Override
+    public String describeState() {
+        return "WorldCat State";
+    }
+
     private static void initialize() {
         if (state == null) {
             state = new WorldCatState();

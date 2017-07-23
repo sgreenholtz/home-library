@@ -23,7 +23,12 @@ public class DatabaseEntryState implements BookState {
 
     @Override
     public BookState getNextState() {
-        return null;
+        return CompletedState.getInstance();
+    }
+
+    @Override
+    public String describeState() {
+        return "Database Entry State";
     }
 
     private static void initialize() {
