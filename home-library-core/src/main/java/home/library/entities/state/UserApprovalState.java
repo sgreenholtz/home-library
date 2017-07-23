@@ -1,14 +1,18 @@
 package home.library.entities.state;
 
-public class ErrorState implements BookState{
+/**
+ * Singleton to represent sending the object to the user
+ * for approval
+ */
+public class UserApprovalState implements BookState {
 
-    private static ErrorState state;
+    private static UserApprovalState state;
 
-    public ErrorState() {
+    public UserApprovalState() {
         initialize();
     }
 
-    public static ErrorState getInstance() {
+    public static BookState getInstance() {
         initialize();
         return state;
     }
@@ -25,7 +29,7 @@ public class ErrorState implements BookState{
 
     private static void initialize() {
         if (state == null) {
-            state = new ErrorState();
+            state = new UserApprovalState();
         }
     }
 }

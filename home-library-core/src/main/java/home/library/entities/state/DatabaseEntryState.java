@@ -1,14 +1,17 @@
 package home.library.entities.state;
 
-public class ErrorState implements BookState{
+/**
+ * Singleton to represent the state of inserting the
+ * book into the database
+ */
+public class DatabaseEntryState implements BookState {
+    private static DatabaseEntryState state;
 
-    private static ErrorState state;
-
-    public ErrorState() {
+    public DatabaseEntryState() {
         initialize();
     }
 
-    public static ErrorState getInstance() {
+    public static BookState getState() {
         initialize();
         return state;
     }
@@ -25,7 +28,7 @@ public class ErrorState implements BookState{
 
     private static void initialize() {
         if (state == null) {
-            state = new ErrorState();
+            state = new DatabaseEntryState();
         }
     }
 }

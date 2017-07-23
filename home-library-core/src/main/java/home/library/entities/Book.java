@@ -1,12 +1,15 @@
 package home.library.entities;
 
 
+import home.library.entities.state.BookState;
+
 public class Book {
 
-    private String isbn;
-    private String lccn;
+    private int id;
     private String title;
     private String author;
+    private String isbn;
+    private String lccn;
     private String publisher;
 
     public String getPublisher() {
@@ -49,6 +52,14 @@ public class Book {
         this.author = author;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -56,7 +67,6 @@ public class Book {
                 ", lccn='" + lccn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", publisher='" + publisher + '\'' +
                 '}';
     }
 }
