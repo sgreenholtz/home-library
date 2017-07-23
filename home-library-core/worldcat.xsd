@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://worldcat.org/xid/isbn/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rsp" type="isbn:rspType" xmlns:isbn="http://worldcat.org/xid/isbn/"/>
+  <xs:complexType name="rspType">
+    <xs:sequence>
+      <xs:element type="isbn:isbnType" name="isbn" xmlns:isbn="http://worldcat.org/xid/isbn/"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="stat"/>
+  </xs:complexType>
+  <xs:complexType name="isbnType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="oclcnum"/>
+        <xs:attribute type="xs:string" name="form"/>
+        <xs:attribute type="xs:string" name="year"/>
+        <xs:attribute type="xs:string" name="lang"/>
+        <xs:attribute type="xs:string" name="ed"/>
+        <xs:attribute type="xs:string" name="title"/>
+        <xs:attribute type="xs:string" name="author"/>
+        <xs:attribute type="xs:string" name="publisher"/>
+        <xs:attribute type="xs:string" name="city"/>
+        <xs:attribute type="xs:string" name="url"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
