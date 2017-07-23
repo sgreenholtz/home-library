@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.loc.gov/mods/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="mods" type="v3:modsType" xmlns:v3="http://www.loc.gov/mods/v3"/>
+  <xs:complexType name="nameType">
+    <xs:sequence>
+      <xs:element name="namePart">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Lutz, Mark."/>
+            <xs:enumeration value="Ascher, David."/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="usage" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="physicalDescriptionType">
+    <xs:sequence>
+      <xs:element type="v3:formType" name="form" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="xs:string" name="extent"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeType">
+    <xs:sequence>
+      <xs:element type="v3:placeTermType" name="placeTerm" xmlns:v3="http://www.loc.gov/mods/v3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="noteType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="altRepGroup" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="urlType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="displayLabel" use="optional"/>
+        <xs:attribute type="xs:string" name="usage" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="relatedItemType">
+    <xs:sequence>
+      <xs:element type="v3:locationType" name="location" xmlns:v3="http://www.loc.gov/mods/v3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeTermType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="authority" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="modsType">
+    <xs:sequence>
+      <xs:element type="v3:titleInfoType" name="titleInfo" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:nameType" name="name" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="xs:string" name="typeOfResource"/>
+      <xs:element type="v3:originInfoType" name="originInfo" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:languageType" name="language" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:physicalDescriptionType" name="physicalDescription" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:noteType" name="note" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:subjectType" name="subject" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:classificationType" name="classification" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:locationType" name="location" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:identifierType" name="identifier" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:relatedItemType" name="relatedItem" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:recordInfoType" name="recordInfo" xmlns:v3="http://www.loc.gov/mods/v3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="version"/>
+  </xs:complexType>
+  <xs:complexType name="dateIssuedType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="encoding" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="languageTermType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type"/>
+        <xs:attribute type="xs:string" name="authority"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="recordContentSourceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="authority"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="formType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="authority"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="languageType">
+    <xs:sequence>
+      <xs:element type="v3:languageTermType" name="languageTerm" xmlns:v3="http://www.loc.gov/mods/v3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="classificationType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="authority" use="optional"/>
+        <xs:attribute type="xs:string" name="edition" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="locationType">
+    <xs:sequence>
+      <xs:element type="v3:urlType" name="url" xmlns:v3="http://www.loc.gov/mods/v3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recordChangeDateType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="encoding"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="identifierType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="subjectType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="topic"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="authority"/>
+  </xs:complexType>
+  <xs:complexType name="titleInfoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="title"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="originInfoType">
+    <xs:sequence>
+      <xs:element type="v3:placeType" name="place" maxOccurs="unbounded" minOccurs="0" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="xs:string" name="publisher"/>
+      <xs:element name="dateIssued" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:string" name="encoding" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element type="xs:string" name="edition"/>
+      <xs:element type="xs:string" name="issuance"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recordInfoType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="descriptionStandard"/>
+      <xs:element type="v3:recordContentSourceType" name="recordContentSource" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:recordCreationDateType" name="recordCreationDate" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="v3:recordChangeDateType" name="recordChangeDate" xmlns:v3="http://www.loc.gov/mods/v3"/>
+      <xs:element type="xs:string" name="recordIdentifier"/>
+      <xs:element type="xs:string" name="recordOrigin"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="recordCreationDateType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="encoding"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

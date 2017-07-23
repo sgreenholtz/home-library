@@ -2,6 +2,7 @@ package home.library;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import home.library.entities.loc.ModsType;
 import home.library.entities.worldcat.RspType;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,6 +33,14 @@ public class XMLResolverTest {
         RspType book = xmlMapper.readValue(new File("worldcat2.xml"), RspType.class);
         String msg = getErrorMessage(book.getIsbn().getOclcnum(), expected);
         assertTrue(msg, book.getIsbn().getOclcnum().equals(expected));
+    }
+
+    @Test
+    public void locTest() throws Exception {
+        String expected = "Learning Python";
+        ModsType book = xmlMapper.readValue(new File("loc.xml"), ModsType.class);
+        String msg = getErrorMessage(book.getTitleInfo().getTitle(), expected);
+        assertTrue(msg, book.getTitleInfo().getTitle().equals(expected));
     }
 
     private String getErrorMessage(String actual, String expected) {

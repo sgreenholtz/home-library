@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">
+    <titleInfo>
+        <title>Learning Python</title>
+    </titleInfo>
+    <name type="personal" usage="primary">
+        <namePart>Lutz, Mark.</namePart>
+    </name>
+    <name type="personal">
+        <namePart>Ascher, David.</namePart>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <originInfo>
+        <place>
+            <placeTerm type="code" authority="marccountry">cau</placeTerm>
+        </place>
+        <place>
+            <placeTerm type="text">Sebastopol, CA</placeTerm>
+        </place>
+        <publisher>O'Reilly</publisher>
+        <dateIssued>c2004</dateIssued>
+        <dateIssued encoding="marc">2004</dateIssued>
+        <edition>2nd ed.</edition>
+        <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+        <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+    </language>
+    <physicalDescription>
+        <form authority="marcform">print</form>
+        <extent>xxvi, 591 p. : ill. ; 24 cm.</extent>
+    </physicalDescription>
+    <note type="statement of responsibility" altRepGroup="00">Mark Lutz and David Ascher.</note>
+    <note type="bibliography">Includes index.</note>
+    <subject authority="lcsh">
+        <topic>Python (Computer program language)</topic>
+    </subject>
+    <classification authority="lcc">QA76.73.P98 L877 2004</classification>
+    <classification authority="ddc" edition="22">005.13/3</classification>
+    <location>
+        <url displayLabel="Publisher description">http://www.loc.gov/catdir/enhancements/fy0715/2004273129-d.html</url>
+    </location>
+    <location>
+        <url displayLabel="Contributor biographical information">http://www.loc.gov/catdir/enhancements/fy0915/2004273129-b.html</url>
+    </location>
+    <location>
+        <url displayLabel="Table of contents only" usage="primary display">http://www.loc.gov/catdir/enhancements/fy1010/2004273129-t.html</url>
+    </location>
+    <identifier type="isbn">0596002815</identifier>
+    <identifier type="lccn">2004273129</identifier>
+    <relatedItem>
+        <location>
+            <url displayLabel="Publisher description">http://www.loc.gov/catdir/enhancements/fy0715/2004273129-d.html</url>
+        </location>
+    </relatedItem>
+    <relatedItem>
+        <location>
+            <url displayLabel="Contributor biographical information">http://www.loc.gov/catdir/enhancements/fy0915/2004273129-b.html</url>
+        </location>
+    </relatedItem>
+    <recordInfo>
+        <descriptionStandard>aacr</descriptionStandard>
+        <recordContentSource authority="marcorg">DLC</recordContentSource>
+        <recordCreationDate encoding="marc">040601</recordCreationDate>
+        <recordChangeDate encoding="iso8601">20100707072750.0</recordChangeDate>
+        <recordIdentifier>13610512</recordIdentifier>
+        <recordOrigin>Converted from MARCXML to MODS version 3.5 using MARC21slim2MODS3-5.xsl
+            (Revision 1.106 2014/12/19)</recordOrigin>
+    </recordInfo>
+</mods>
