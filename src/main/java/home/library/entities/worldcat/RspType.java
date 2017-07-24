@@ -38,6 +38,15 @@ public class RspType {
     protected IsbnType isbn;
     @XmlAttribute(name = "stat")
     protected String stat;
+    protected String isbnLit;
+
+    public String getIsbnLit() {
+        return isbnLit;
+    }
+
+    public void setIsbnLit(String isbnLit) {
+        this.isbnLit = isbnLit;
+    }
 
     /**
      * Gets the value of the isbn property.
@@ -92,6 +101,7 @@ public class RspType {
         return "RspType{" +
                 "isbn=" + isbn +
                 ", stat='" + stat + '\'' +
+                ", isbnLit='" + isbnLit + '\'' +
                 '}';
     }
 }

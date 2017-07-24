@@ -44,12 +44,8 @@ public class IsbnType {
     protected String value;
     @XmlAttribute(name = "oclcnum")
     protected String oclcnum;
-    @XmlAttribute(name = "form")
-    protected String form;
     @XmlAttribute(name = "year")
     protected String year;
-    @XmlAttribute(name = "lang")
-    protected String lang;
     @XmlAttribute(name = "ed")
     protected String ed;
     @XmlAttribute(name = "title")
@@ -58,10 +54,18 @@ public class IsbnType {
     protected String author;
     @XmlAttribute(name = "publisher")
     protected String publisher;
-    @XmlAttribute(name = "city")
-    protected String city;
     @XmlAttribute(name = "url")
     protected String url;
+    @XmlAttribute(name="lccn")
+    protected String lccn;
+
+    public String getLccn() {
+        return lccn;
+    }
+
+    public void setLccn(String lccn) {
+        this.lccn = lccn;
+    }
 
     /**
      * Gets the value of the value property.
@@ -112,30 +116,6 @@ public class IsbnType {
     }
 
     /**
-     * Gets the value of the form property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getForm() {
-        return form;
-    }
-
-    /**
-     * Sets the value of the form property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setForm(String value) {
-        this.form = value;
-    }
-
-    /**
      * Gets the value of the year property.
      * 
      * @return
@@ -157,30 +137,6 @@ public class IsbnType {
      */
     public void setYear(String value) {
         this.year = value;
-    }
-
-    /**
-     * Gets the value of the lang property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLang() {
-        return lang;
-    }
-
-    /**
-     * Sets the value of the lang property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLang(String value) {
-        this.lang = value;
     }
 
     /**
@@ -280,30 +236,6 @@ public class IsbnType {
     }
 
     /**
-     * Gets the value of the city property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCity() {
-        return city;
-    }
-
-    /**
-     * Sets the value of the city property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCity(String value) {
-        this.city = value;
-    }
-
-    /**
      * Gets the value of the url property.
      * 
      * @return
@@ -332,15 +264,13 @@ public class IsbnType {
         return "IsbnType{" +
                 "value='" + value + '\'' +
                 ", oclcnum='" + oclcnum + '\'' +
-                ", form='" + form + '\'' +
                 ", year='" + year + '\'' +
-                ", lang='" + lang + '\'' +
                 ", ed='" + ed + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
-                ", city='" + city + '\'' +
                 ", url='" + url + '\'' +
+                ", lccn='" + lccn + '\'' +
                 '}';
     }
 }

@@ -7,10 +7,28 @@ public class Book {
 
     private int id;
     private String title;
+    private String subTitle;
     private String author;
     private String isbn;
     private String lccn;
     private String publisher;
+    private OclcNumbers oclcNumbers;
+
+    public String getSubTitle() {
+        return subTitle;
+    }
+
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
+    }
+
+    public OclcNumbers getOclcNumbers() {
+        return oclcNumbers;
+    }
+
+    public void setOclcNumbers(OclcNumbers oclcNumbers) {
+        this.oclcNumbers = oclcNumbers;
+    }
 
     public String getPublisher() {
         return publisher;
