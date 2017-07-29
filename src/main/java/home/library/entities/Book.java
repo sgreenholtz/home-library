@@ -1,16 +1,14 @@
 package home.library.entities;
 
 
-import home.library.entities.state.BookState;
-
 public class Book {
 
     private int id;
     private String title;
     private String subTitle;
     private String author;
-    private String isbn;
-    private String lccn;
+    private long isbn;
+    private long lccn;
     private String publisher;
     private OclcNumbers oclcNumbers;
 
@@ -38,19 +36,19 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public String getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(long isbn) {
         this.isbn = isbn;
     }
 
-    public String getLccn() {
+    public long getLccn() {
         return lccn;
     }
 
-    public void setLccn(String lccn) {
+    public void setLccn(long lccn) {
         this.lccn = lccn;
     }
 

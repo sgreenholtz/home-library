@@ -1,6 +1,10 @@
 package home.library.controller;
 
+import home.library.dataservices.LibraryOfCongressService;
 import home.library.dataservices.WorldCatService;
+import home.library.entities.Book;
+import home.library.entities.BookBuilder;
+import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.entities.worldcat.WorldCatBook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,16 +25,27 @@ public class GetBookInfoController {
     static Logger LOG = LoggerFactory.getLogger(GetBookInfoController.class);
     @Autowired
     private WorldCatService worldCatService;
+    @Autowired
+    private LibraryOfCongressService locService;
+
+    @Autowired
+    private BookBuilder builder;
 
     @RequestMapping(value="/services/search/{isbn}")
     @ResponseBody
-    public void getWebServiceResults(@RequestParam long isbn) {
+    public Book getWebServiceResults(@RequestParam long isbn) {
         LOG.debug("Entering getWebServiceResults, isbn: " + isbn);
-        WorldCatBook book = initiateSearch(isbn);
-        LOG.debug("Exiting getWebServiceResults, book: " + book.getIsbn().getTitle());
+        builder.setWorldCatBook(searchWorldCat(isbn));
+        builder.setLocBook(searchLibraryOfCongress(builder.getBook().getLccn()));
+        LOG.debug("Exiting getWebServiceResults, book: " + builder.getBook().getTitle());
+        return builder.getBook();
     }
 
-    private WorldCatBook initiateSearch(Long isbn) {
+    private WorldCatBook searchWorldCat(Long isbn) {
         return worldCatService.getWorldCatBook(isbn);
+    }
+
+    private LibraryOfCongressBook searchLibraryOfCongress(long lccn) {
+        return locService.getLibraryOfCongressBook(lccn);
     }
 }

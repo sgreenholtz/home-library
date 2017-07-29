@@ -20,15 +20,14 @@ import org.springframework.stereotype.Component;
  * </ol>
  */
 @Component
-public class BookFactory {
+public class BookBuilder {
 
     private WorldCatBook worldCatBook;
     private LibraryOfCongressBook locBook;
     private Book book;
     private BookState state;
-    private String isbn;
 
-    public BookFactory() {
+    public BookBuilder() {
         book = new Book();
     }
 
@@ -52,24 +51,12 @@ public class BookFactory {
         return book;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
     public BookState getState() {
         return state;
     }
 
     public void setState(BookState state) {
         this.state = state;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 
     public void extractWorldCatFields(WorldCatBook worldCatBook) {
