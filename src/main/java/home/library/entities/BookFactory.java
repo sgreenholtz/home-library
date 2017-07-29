@@ -28,7 +28,9 @@ public class BookFactory {
     private BookState state;
     private String isbn;
 
-    public BookFactory() {}
+    public BookFactory() {
+        book = new Book();
+    }
 
     public RspType getWorldCatBook() {
         return worldCatBook;
@@ -68,5 +70,18 @@ public class BookFactory {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public void extractWorldCatFields(RspType worldCatBook) {
+        book.setLccn(worldCatBook.getIsbn().getLccn());
+        book.setAuthor(worldCatBook.getIsbn().getAuthor());
+        book.setTitle(worldCatBook.getIsbn().getTitle());
+        book.setOclcNumbers(OclcNumbers.parseOclcNumbers(
+                worldCatBook.getIsbn().getOclcnum()));
+    }
+
+    public void extractLibraryOfCongressFields(ModsType libraryOfCongressBook) {
+        book.setPublisher(libraryOfCongressBook.getOriginInfo().getPublisher());
+
     }
 }

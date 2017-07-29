@@ -1,10 +1,10 @@
 package home.library.controller;
 
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class LibraryOfCongressController {
 
-    public void test() {
-    }
+
 
 }
