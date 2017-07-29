@@ -45,6 +45,9 @@ public class RestServiceTest {
     @Test
     public void libraryOfCongressRestRawXMLTest() {
         String lccn="2013049742";
+        RestTemplate template = new RestTemplate();
+        String result = template.getForObject(TestUtility.getLocURL(lccn), String.class);
+        System.out.println(result);
     }
 
     @Test
