@@ -1,7 +1,9 @@
 package home.library.dataservices;
 
-import home.library.entities.loc.ModsType;
+import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.util.Props;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,8 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class LibraryOfCongressService {
 
-    public ModsType getLibraryOfCongressBook(Integer lccn) {
+    static Logger LOG = LoggerFactory.getLogger(LibraryOfCongressService.class);
+
+    public LibraryOfCongressBook getLibraryOfCongressBook(Long lccn) {
+        LOG.debug("Entering getLibraryOfCongressBook, lccn: " + lccn);
         RestTemplate template = new RestTemplate();
-        return template.getForObject(Props.getLocUrl(lccn), ModsType.class);
+        LibraryOfCongressBook book = template.getForObject(Props.getLocUrl(lccn.toString()), LibraryOfCongressBook.class);
+        LOG.debug("Exiting getLibraryOfCongressBook, book: " + book.getTitleInfo().getTitle());
+        return book;
     }
 }

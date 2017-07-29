@@ -60,7 +60,7 @@ import javax.xml.bind.annotation.XmlType;
     "relatedItem",
     "recordInfo"
 })
-public class ModsType {
+public class LibraryOfCongressBook {
 
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected TitleInfoType titleInfo;

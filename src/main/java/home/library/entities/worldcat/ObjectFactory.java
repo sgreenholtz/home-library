@@ -34,11 +34,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RspType }
+     * Create an instance of {@link WorldCatBook }
      * 
      */
-    public RspType createRspType() {
-        return new RspType();
+    public WorldCatBook createRspType() {
+        return new WorldCatBook();
     }
 
     /**
@@ -50,12 +50,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RspType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link WorldCatBook }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://worldcat.org/xid/isbn/", name = "rsp")
-    public JAXBElement<RspType> createRsp(RspType value) {
-        return new JAXBElement<RspType>(_Rsp_QNAME, RspType.class, null, value);
+    public JAXBElement<WorldCatBook> createRsp(WorldCatBook value) {
+        return new JAXBElement<WorldCatBook>(_Rsp_QNAME, WorldCatBook.class, null, value);
     }
 
 }

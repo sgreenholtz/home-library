@@ -42,11 +42,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ModsType }
+     * Create an instance of {@link LibraryOfCongressBook }
      * 
      */
-    public ModsType createModsType() {
-        return new ModsType();
+    public LibraryOfCongressBook createModsType() {
+        return new LibraryOfCongressBook();
     }
 
     /**
@@ -218,12 +218,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModsType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link LibraryOfCongressBook }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.loc.gov/mods/v3", name = "mods")
-    public JAXBElement<ModsType> createMods(ModsType value) {
-        return new JAXBElement<ModsType>(_Mods_QNAME, ModsType.class, null, value);
+    public JAXBElement<LibraryOfCongressBook> createMods(LibraryOfCongressBook value) {
+        return new JAXBElement<LibraryOfCongressBook>(_Mods_QNAME, LibraryOfCongressBook.class, null, value);
     }
 
 }

@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "rspType", namespace = "http://worldcat.org/xid/isbn/", propOrder = {
     "isbn"
 })
-public class RspType {
+public class WorldCatBook {
 
     @XmlElement(namespace = "http://worldcat.org/xid/isbn/", required = true)
     protected IsbnType isbn;

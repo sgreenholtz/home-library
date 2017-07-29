@@ -1,8 +1,8 @@
 package home.library.entities;
 
-import home.library.entities.loc.ModsType;
+import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.entities.state.BookState;
-import home.library.entities.worldcat.RspType;
+import home.library.entities.worldcat.WorldCatBook;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,8 +22,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class BookFactory {
 
-    private RspType worldCatBook;
-    private ModsType locBook;
+    private WorldCatBook worldCatBook;
+    private LibraryOfCongressBook locBook;
     private Book book;
     private BookState state;
     private String isbn;
@@ -32,19 +32,19 @@ public class BookFactory {
         book = new Book();
     }
 
-    public RspType getWorldCatBook() {
+    public WorldCatBook getWorldCatBook() {
         return worldCatBook;
     }
 
-    public void setWorldCatBook(RspType worldCatBook) {
+    public void setWorldCatBook(WorldCatBook worldCatBook) {
         this.worldCatBook = worldCatBook;
     }
 
-    public ModsType getLocBook() {
+    public LibraryOfCongressBook getLocBook() {
         return locBook;
     }
 
-    public void setLocBook(ModsType locBook) {
+    public void setLocBook(LibraryOfCongressBook locBook) {
         this.locBook = locBook;
     }
 
@@ -72,7 +72,7 @@ public class BookFactory {
         this.isbn = isbn;
     }
 
-    public void extractWorldCatFields(RspType worldCatBook) {
+    public void extractWorldCatFields(WorldCatBook worldCatBook) {
         book.setLccn(worldCatBook.getIsbn().getLccn());
         book.setAuthor(worldCatBook.getIsbn().getAuthor());
         book.setTitle(worldCatBook.getIsbn().getTitle());
@@ -80,7 +80,7 @@ public class BookFactory {
                 worldCatBook.getIsbn().getOclcnum()));
     }
 
-    public void extractLibraryOfCongressFields(ModsType libraryOfCongressBook) {
+    public void extractLibraryOfCongressFields(LibraryOfCongressBook libraryOfCongressBook) {
         book.setPublisher(libraryOfCongressBook.getOriginInfo().getPublisher());
 
     }
