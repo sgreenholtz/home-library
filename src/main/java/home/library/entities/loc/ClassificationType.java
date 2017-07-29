@@ -39,6 +39,15 @@ public class ClassificationType {
     @XmlAttribute(name = "edition")
     protected String edition;
 
+    @Override
+    public String toString() {
+        return "ClassificationType{" +
+                "value='" + value + '\'' +
+                ", authority='" + authority + '\'' +
+                ", edition='" + edition + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

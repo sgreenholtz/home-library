@@ -36,6 +36,14 @@ public class FormType {
     @XmlAttribute(name = "authority")
     protected String authority;
 
+    @Override
+    public String toString() {
+        return "FormType{" +
+                "value='" + value + '\'' +
+                ", authority='" + authority + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

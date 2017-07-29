@@ -43,6 +43,11 @@ public class RestServiceTest {
     }
 
     @Test
+    public void libraryOfCongressRestRawXMLTest() {
+        String lccn="2013049742";
+    }
+
+    @Test
     public void worldCatServiceTest() {
         long isbn = 9781476755885l;
         String lccnExpected = "2013049742";
@@ -57,6 +62,7 @@ public class RestServiceTest {
         String expected = "Rush Revere and the first patriots";
         LibraryOfCongressBook book = locService.getLibraryOfCongressBook(lccn);
         String msg = TestUtility.getErrorMessage(book.getTitleInfo().getTitle(), expected);
+        System.out.println(book);
         assertTrue(msg, book.getTitleInfo().getTitle().equals(expected));
     }
 

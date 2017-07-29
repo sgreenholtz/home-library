@@ -35,6 +35,13 @@ public class PlaceType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected PlaceTermType placeTerm;
 
+    @Override
+    public String toString() {
+        return "PlaceType{" +
+                "placeTerm=" + placeTerm +
+                '}';
+    }
+
     /**
      * Gets the value of the placeTerm property.
      * 

@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="topic" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
- *       &lt;attribute name="authority" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="genre" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -32,12 +32,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "subjectType", namespace = "http://www.loc.gov/mods/v3", propOrder = {
     "topic"
 })
-public class SubjectType {
+public class TagType {
 
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected String topic;
-    @XmlAttribute(name = "authority")
-    protected String authority;
+    @XmlAttribute(name = "genre")
+    protected String genre;
+
+
 
     /**
      * Gets the value of the topic property.
@@ -64,27 +66,34 @@ public class SubjectType {
     }
 
     /**
-     * Gets the value of the authority property.
+     * Gets the value of the genre property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAuthority() {
-        return authority;
+    public String getGenre() {
+        return genre;
     }
 
     /**
-     * Sets the value of the authority property.
+     * Sets the value of the genre property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAuthority(String value) {
-        this.authority = value;
+    public void setGenre(String value) {
+        this.genre = value;
     }
 
+    @Override
+    public String toString() {
+        return "TagType{" +
+                "topic='" + topic + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }

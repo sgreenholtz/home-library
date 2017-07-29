@@ -11,6 +11,24 @@ public class Book {
     private long lccn;
     private String publisher;
     private OclcNumbers oclcNumbers;
+    private Tags tags;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Tags getTags() {
+        return tags;
+    }
+
+    public void setTags(Tags tags) {
+        this.tags = tags;
+    }
 
     public String getSubTitle() {
         return subTitle;

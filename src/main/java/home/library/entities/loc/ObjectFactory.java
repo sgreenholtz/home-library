@@ -122,11 +122,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubjectType }
+     * Create an instance of {@link TagType }
      * 
      */
-    public SubjectType createSubjectType() {
-        return new SubjectType();
+    public TagType createSubjectType() {
+        return new TagType();
     }
 
     /**

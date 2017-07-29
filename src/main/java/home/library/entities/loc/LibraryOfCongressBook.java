@@ -80,7 +80,7 @@ public class LibraryOfCongressBook {
     @JacksonXmlElementWrapper(useWrapping = false)
     protected List<NoteType> note;
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
-    protected SubjectType subject;
+    protected TagType subject;
     @XmlElement(namespace = "http://www.loc.gov/mods/v3")
     @JacksonXmlElementWrapper(useWrapping = false)
     protected List<ClassificationType> classification;
@@ -279,10 +279,10 @@ public class LibraryOfCongressBook {
      * 
      * @return
      *     possible object is
-     *     {@link SubjectType }
+     *     {@link TagType }
      *     
      */
-    public SubjectType getSubject() {
+    public TagType getSubject() {
         return subject;
     }
 
@@ -291,10 +291,10 @@ public class LibraryOfCongressBook {
      * 
      * @param value
      *     allowed object is
-     *     {@link SubjectType }
+     *     {@link TagType }
      *     
      */
-    public void setSubject(SubjectType value) {
+    public void setSubject(TagType value) {
         this.subject = value;
     }
 

@@ -55,6 +55,18 @@ public class RecordInfoType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected String recordOrigin;
 
+    @Override
+    public String toString() {
+        return "RecordInfoType{" +
+                "descriptionStandard='" + descriptionStandard + '\'' +
+                ", recordContentSource=" + recordContentSource +
+                ", recordCreationDate=" + recordCreationDate +
+                ", recordChangeDate=" + recordChangeDate +
+                ", recordIdentifier='" + recordIdentifier + '\'' +
+                ", recordOrigin='" + recordOrigin + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the descriptionStandard property.
      * 

@@ -39,6 +39,14 @@ public class PhysicalDescriptionType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected String extent;
 
+    @Override
+    public String toString() {
+        return "PhysicalDescriptionType{" +
+                "form=" + form +
+                ", extent='" + extent + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the form property.
      * 

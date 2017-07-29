@@ -35,6 +35,13 @@ public class RelatedItemType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected LocationType location;
 
+    @Override
+    public String toString() {
+        return "RelatedItemType{" +
+                "location=" + location +
+                '}';
+    }
+
     /**
      * Gets the value of the location property.
      * 

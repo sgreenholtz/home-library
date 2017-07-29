@@ -39,6 +39,15 @@ public class NoteType {
     @XmlAttribute(name = "altRepGroup")
     protected String altRepGroup;
 
+    @Override
+    public String toString() {
+        return "NoteType{" +
+                "value='" + value + '\'' +
+                ", type='" + type + '\'' +
+                ", altRepGroup='" + altRepGroup + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

@@ -6,7 +6,7 @@ import home.library.entities.worldcat.WorldCatBook;
 import org.springframework.stereotype.Component;
 
 /**
- * Factory class for assembling all the components that make up a
+ * Builder class for assembling all the components that make up a
  * book record:
  *
  * <ol>
@@ -60,7 +60,7 @@ public class BookBuilder {
     }
 
     public void extractWorldCatFields(WorldCatBook worldCatBook) {
-        book.setLccn(worldCatBook.getIsbn().getLccn());
+        book.setLccn(Long.parseLong(worldCatBook.getIsbn().getLccn()));
         book.setAuthor(worldCatBook.getIsbn().getAuthor());
         book.setTitle(worldCatBook.getIsbn().getTitle());
         book.setOclcNumbers(OclcNumbers.parseOclcNumbers(
@@ -69,6 +69,7 @@ public class BookBuilder {
 
     public void extractLibraryOfCongressFields(LibraryOfCongressBook libraryOfCongressBook) {
         book.setPublisher(libraryOfCongressBook.getOriginInfo().getPublisher());
+//        book.setTags(libraryOfCongressBook.getSubject().getTopic());
 
     }
 }

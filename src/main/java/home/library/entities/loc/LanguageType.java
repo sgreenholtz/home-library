@@ -35,6 +35,13 @@ public class LanguageType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected LanguageTermType languageTerm;
 
+    @Override
+    public String toString() {
+        return "LanguageType{" +
+                "languageTerm=" + languageTerm +
+                '}';
+    }
+
     /**
      * Gets the value of the languageTerm property.
      * 

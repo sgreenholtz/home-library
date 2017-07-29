@@ -49,6 +49,15 @@ public class NameType {
     @XmlAttribute(name = "usage")
     protected String usage;
 
+    @Override
+    public String toString() {
+        return "NameType{" +
+                "namePart='" + namePart + '\'' +
+                ", type='" + type + '\'' +
+                ", usage='" + usage + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the namePart property.
      * 

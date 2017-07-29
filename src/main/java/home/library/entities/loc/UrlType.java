@@ -39,6 +39,15 @@ public class UrlType {
     @XmlAttribute(name = "usage")
     protected String usage;
 
+    @Override
+    public String toString() {
+        return "UrlType{" +
+                "value='" + value + '\'' +
+                ", displayLabel='" + displayLabel + '\'' +
+                ", usage='" + usage + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

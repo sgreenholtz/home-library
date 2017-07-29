@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.entities.worldcat.WorldCatBook;
 import home.library.util.TestUtility;
+import home.library.util.XMLParser;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.io.File;
@@ -43,4 +44,11 @@ public class XMLResolverTest {
         String msg = TestUtility.getErrorMessage(book.getTitleInfo().getTitle(), expected);
         assertTrue(msg, book.getTitleInfo().getTitle().equals(expected));
     }
-}
+
+    @Test
+    public void xmlParserTest() throws Exception {
+        XMLParser parser = new XMLParser();
+        parser.worldCatTest();
+    }
+
+ }

@@ -39,6 +39,14 @@ public class DateIssuedType {
     @XmlAttribute(name = "encoding")
     protected String encoding;
 
+    @Override
+    public String toString() {
+        return "DateIssuedType{" +
+                "value='" + value + '\'' +
+                ", encoding='" + encoding + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

@@ -35,6 +35,13 @@ public class TitleInfoType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected String title;
 
+    @Override
+    public String toString() {
+        return "TitleInfoType{" +
+                "title='" + title + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the title property.
      * 

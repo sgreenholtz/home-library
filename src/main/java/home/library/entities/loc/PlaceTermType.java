@@ -39,6 +39,15 @@ public class PlaceTermType {
     @XmlAttribute(name = "authority")
     protected String authority;
 
+    @Override
+    public String toString() {
+        return "PlaceTermType{" +
+                "value='" + value + '\'' +
+                ", type='" + type + '\'' +
+                ", authority='" + authority + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

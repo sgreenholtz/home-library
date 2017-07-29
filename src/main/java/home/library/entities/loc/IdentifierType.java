@@ -36,6 +36,14 @@ public class IdentifierType {
     @XmlAttribute(name = "type")
     protected String type;
 
+    @Override
+    public String toString() {
+        return "IdentifierType{" +
+                "value='" + value + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

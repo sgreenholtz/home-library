@@ -36,6 +36,14 @@ public class RecordCreationDateType {
     @XmlAttribute(name = "encoding")
     protected String encoding;
 
+    @Override
+    public String toString() {
+        return "RecordCreationDateType{" +
+                "value='" + value + '\'' +
+                ", encoding='" + encoding + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

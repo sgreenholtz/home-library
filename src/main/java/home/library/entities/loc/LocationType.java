@@ -35,6 +35,13 @@ public class LocationType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected UrlType url;
 
+    @Override
+    public String toString() {
+        return "LocationType{" +
+                "url=" + url +
+                '}';
+    }
+
     /**
      * Gets the value of the url property.
      * 

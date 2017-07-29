@@ -39,6 +39,15 @@ public class LanguageTermType {
     @XmlAttribute(name = "authority")
     protected String authority;
 
+    @Override
+    public String toString() {
+        return "LanguageTermType{" +
+                "value='" + value + '\'' +
+                ", type='" + type + '\'' +
+                ", authority='" + authority + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the value property.
      * 

@@ -63,6 +63,16 @@ public class OriginInfoType {
     @XmlElement(namespace = "http://www.loc.gov/mods/v3", required = true)
     protected String issuance;
 
+    @Override
+    public String toString() {
+        return "OriginInfoType{" +
+                "place=" + place +
+                ", publisher='" + publisher + '\'' +
+                ", edition='" + edition + '\'' +
+                ", issuance='" + issuance + '\'' +
+                '}';
+    }
+
     /**
      * Gets the value of the place property.
      * 
