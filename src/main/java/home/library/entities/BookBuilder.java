@@ -2,7 +2,14 @@ package home.library.entities;
 
 import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.entities.state.BookState;
-import home.library.entities.worldcat.WorldCatBook;
+import home.library.entities.state.ErrorState;
+import home.library.entities.state.LocState;
+import home.library.entities.state.WorldCatState;
+import home.library.util.LoggingUtility;
+import home.library.util.XMLParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -26,50 +33,56 @@ public class BookBuilder {
     private LibraryOfCongressBook locBook;
     private Book book;
     private BookState state;
+    @Autowired
+    private XMLParser parser;
+    static Logger LOG = LoggerFactory.getLogger(BookBuilder.class);
 
     public BookBuilder() {
         book = new Book();
-    }
-
-    public WorldCatBook getWorldCatBook() {
-        return worldCatBook;
-    }
-
-    public void setWorldCatBook(WorldCatBook worldCatBook) {
-        this.worldCatBook = worldCatBook;
-    }
-
-    public LibraryOfCongressBook getLocBook() {
-        return locBook;
-    }
-
-    public void setLocBook(LibraryOfCongressBook locBook) {
-        this.locBook = locBook;
     }
 
     public Book getBook() {
         return book;
     }
 
-    public BookState getState() {
-        return state;
+    /**
+     * Parses the XML response from WorldCat into a WorldCatBook object
+     * @param xml
+     */
+    public void setWorldCatBook(String xml) {
+        state = WorldCatState.getInstance();
+        try {
+            parser.setDocument(xml);
+            worldCatBook = new WorldCatBook(xml);
+            worldCatBook.setLccn(Long.parseLong(parser.getFirstChildAttribute("lccn")));
+            worldCatBook.setAuthor(parser.getFirstChildAttribute("author"));
+            worldCatBook.setTitle(parser.getFirstChildAttribute("title"));
+            worldCatBook.setPublisher(parser.getFirstChildAttribute("publisher"));
+            worldCatBook.setOclcNumbers(
+                    OclcNumbers.parseOclcNumbers(
+                            parser.getFirstChildAttribute("oclcnum")
+                    )
+            );
+        } catch (Exception e) {
+            state = ErrorState.getInstance();
+            LOG.error(LoggingUtility.formatStackTrace(e));
+        }
     }
 
-    public void setState(BookState state) {
-        this.state = state;
+    /**
+     * Parses the XML response from Library of Congress
+     * into a LibraryofCongressBook object
+     * @param xml
+     */
+    public void setLocBook(String xml) {
+        state = LocState.getInstance();
+        try {
+
+        } catch (Exception e) {
+            state = ErrorState.getInstance();
+            LOG.error(LoggingUtility.formatStackTrace(e));
+        }
     }
 
-    public void extractWorldCatFields(WorldCatBook worldCatBook) {
-        book.setLccn(Long.parseLong(worldCatBook.getIsbn().getLccn()));
-        book.setAuthor(worldCatBook.getIsbn().getAuthor());
-        book.setTitle(worldCatBook.getIsbn().getTitle());
-        book.setOclcNumbers(OclcNumbers.parseOclcNumbers(
-                worldCatBook.getIsbn().getOclcnum()));
-    }
 
-    public void extractLibraryOfCongressFields(LibraryOfCongressBook libraryOfCongressBook) {
-        book.setPublisher(libraryOfCongressBook.getOriginInfo().getPublisher());
-//        book.setTags(libraryOfCongressBook.getSubject().getTopic());
-
-    }
 }

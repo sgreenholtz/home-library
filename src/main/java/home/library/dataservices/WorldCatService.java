@@ -1,6 +1,6 @@
 package home.library.dataservices;
 
-import home.library.entities.worldcat.WorldCatBook;
+import home.library.entities.WorldCatBook;
 import home.library.util.Props;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

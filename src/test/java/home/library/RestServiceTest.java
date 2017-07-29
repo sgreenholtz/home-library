@@ -2,13 +2,12 @@ package home.library;
 
 import home.library.dataservices.LibraryOfCongressService;
 import home.library.dataservices.WorldCatService;
+import home.library.entities.WorldCatBook;
 import home.library.entities.loc.LibraryOfCongressBook;
 import home.library.util.TestUtility;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.client.RestTemplate;
-import home.library.entities.worldcat.*;
 
 import static junit.framework.TestCase.assertTrue;
 

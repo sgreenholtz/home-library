@@ -5,7 +5,7 @@ import home.library.dataservices.WorldCatService;
 import home.library.entities.Book;
 import home.library.entities.BookBuilder;
 import home.library.entities.loc.LibraryOfCongressBook;
-import home.library.entities.worldcat.WorldCatBook;
+import home.library.entities.WorldCatBook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

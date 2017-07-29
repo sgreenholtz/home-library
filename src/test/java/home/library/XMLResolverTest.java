@@ -3,7 +3,7 @@ package home.library;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import home.library.entities.loc.LibraryOfCongressBook;
-import home.library.entities.worldcat.WorldCatBook;
+import home.library.entities.WorldCatBook;
 import home.library.util.TestUtility;
 import home.library.util.XMLParser;
 import org.junit.Test;
